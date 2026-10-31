@@ -1,0 +1,13 @@
+services:
+  postgres:
+    image: postgres:16
+    environment:
+      POSTGRES_USER: envvault
+      POSTGRES_PASSWORD: envvault
+      POSTGRES_DB: envvault
+    ports:
+      - "5432:5432"
+    volumes:
+      - envvault-pg:/var/lib/postgresql/data
+volumes:
+  envvault-pg:
